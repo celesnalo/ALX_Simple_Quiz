@@ -1,17 +1,19 @@
-function checkAnswer(){
-    const correctAnswer = 4;
+function checkAnswer() {
+    const correctAnswer = "4"; 
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
-    
-    if(selectedOption){
+
+    if (selectedOption) {
         const userAnswer = selectedOption.value;
-        if(correctAnswer == userAnswer){
-            document.getElementById('feedback').innerText = "Nazoke, Correct! Well done.";
-        }else{
-            document.getElementById('feedback').innerText = "Kushuthi ugula ngempela wena, That's incorrect. Try again!";
+        if (userAnswer === correctAnswer) {
+            document.getElementById('feedback').innerText = "Well done.";
+        } else {
+            document.getElementById('feedback').innerText = "That's incorrect. Try again!";
         }
     }
-
-    //Event Listener to the Submit Button
-    document.getElementById('submit-answer').addEventListener('click', checkAnswer); 
 }
+
+// Event Listener to the Submit Button
+document.getElementById('submit-answer').addEventListener('click', checkAnswer);
+
+// Initial check when the script loads
 checkAnswer();
